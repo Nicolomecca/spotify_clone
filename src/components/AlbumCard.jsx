@@ -27,7 +27,7 @@ const AlbumCard = ({ singleSong }) => {
         alt="track" 
         onClick={handleClick} 
       />
-      <p>
+      <p className="text-white">
         <span 
           onClick={handleAddToFavourite} 
           style={{ cursor: 'pointer' }} 
@@ -37,7 +37,7 @@ const AlbumCard = ({ singleSong }) => {
             size={16}
             className="mr-2 my-auto me-2"
           />
-        </span>
+        </span >
         Track: "{singleSong.title}"<br />
         Artist: {singleSong.artist.name}
       </p>
