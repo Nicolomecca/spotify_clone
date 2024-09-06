@@ -1,9 +1,24 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Player = () => {
+    const currentSong = useSelector((state) => state.currentSong);
   return (
     <Container fluid className="fixed-bottom bg-container pt-1">
+          <div className="bg-container">
+      {currentSong ? (
+        <div>
+          <h3>Now Playing</h3>
+          <img src={currentSong.album.cover_medium} alt="Current Track" />
+          <p>Track: "{currentSong.title}"</p>
+          <p>Artist: {currentSong.artist.name}</p>
+          {/* Aggiungi i controlli di riproduzione qui */}
+        </div>
+      ) : (
+        <p>No song selected</p>
+      )}
+    </div>
       <Row className="h-100">
         <Col lg={10} className="offset-lg-2">
           <Row className="h-100 flex-column justify-content-center align-items-center">
