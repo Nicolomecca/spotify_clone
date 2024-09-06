@@ -1,8 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit'
-import songReducer from '../reducers'
+import { configureStore,combineReducers } from '@reduxjs/toolkit'
+import favouriteReducer from '../reducers/favourite'
+import songReducer from '../reducers/song'
 
+
+const bigReducer = combineReducers({
+  favourite : favouriteReducer,
+  song: songReducer ,
+})
 const store = configureStore({
-    reducer: songReducer,
+    reducer: bigReducer,
   })
 
   export default store

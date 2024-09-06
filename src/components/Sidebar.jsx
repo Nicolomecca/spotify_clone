@@ -6,7 +6,6 @@ const Sidebar = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
-    // Logica di ricerca o navigazione
     console.log("Searching for:", searchTerm);
   };
 
@@ -66,11 +65,11 @@ const Sidebar = () => {
             Login
           </Button>
           <div>
-            <Link to="#" className="text-secondary">
+            <Link to="#" className="text-secondary text-decoration-none">
               Cookie Policy
             </Link>{" "}
             |{" "}
-            <Link to="#" className="text-secondary">
+            <Link to="#" className="text-secondary text-decoration-none">
               Privacy
             </Link>
           </div>
