@@ -150,10 +150,10 @@
 
 
 .mainLinks {
-  color:black; /* Cambia il colore al passaggio del mouse, se desiderato */
+  color:black; 
 }
 html, body {
-  height: 100%; /* Assicurati che il body occupi l'intera altezza */
+  height: 100%; 
   margin: 0; 
 }
 
@@ -162,3 +162,16 @@ body {
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,44,52,1) 15%, rgb(42, 128, 151) 100%);
 }
 
+.sidebar {
+  background-color: #343a40; 
+  color: white;
+  height: 100vh; 
+  position: fixed; 
+  width: 250px; 
+  z-index: 1000; 
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
