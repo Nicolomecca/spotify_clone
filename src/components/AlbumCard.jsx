@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentSong, addToFavourite } from '../redux/actions/actions';
+import { setCurrentSong, addToFavourite, removeToFavourite } from '../redux/actions/actions';
 import { BsHeartFill } from 'react-icons/bs';
 
 const AlbumCard = ({ singleSong }) => {
@@ -9,14 +9,19 @@ const AlbumCard = ({ singleSong }) => {
   
   const favourites = useSelector((state) => state.favourite.list);
   
-  const isFavourite = favourites.some(song => song.id === singleSong.id);
+  const favouriteIds = favourites.map(song => song.id);
+  const isFavourite = favouriteIds.includes(singleSong.id);
 
   const handleClick = () => {
     dispatch(setCurrentSong(singleSong));
   };
 
-  const handleAddToFavourite = () => {
-    dispatch(addToFavourite(singleSong));
+  const handleToggleFavourite = () => {
+    if (isFavourite) {
+      dispatch(removeToFavourite(singleSong));
+    } else {
+      dispatch(addToFavourite(singleSong));
+    }
   };
 
   return (
@@ -29,7 +34,7 @@ const AlbumCard = ({ singleSong }) => {
       />
       <p className="text-white">
         <span 
-          onClick={handleAddToFavourite} 
+          onClick={handleToggleFavourite} 
           style={{ cursor: 'pointer' }} 
         >
           <BsHeartFill
@@ -37,7 +42,7 @@ const AlbumCard = ({ singleSong }) => {
             size={16}
             className="mr-2 my-auto me-2"
           />
-        </span >
+        </span>
         Track: "{singleSong.title}"<br />
         Artist: {singleSong.artist.name}
       </p>

@@ -29,7 +29,7 @@ const Main = () => {
         <Col xs={10}>
           <div id="rock">
             <h2 style={{ color: 'grey' }} className='mb-3'>Rock Classics</h2>
-            <Row >
+            <Row3 >
               <MusicSection artistName="queen" />
             </Row>
           </div>
