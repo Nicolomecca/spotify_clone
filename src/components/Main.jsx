@@ -29,8 +29,8 @@ const Main = () => {
         <Col xs={10}>
           <div id="rock">
             <h2 style={{ color: 'grey' }} className='mb-3'>Rock Classics</h2>
-            <Row3 >
-              <MusicSection artistName="queen" />
+            <Row >
+              <MusicSection artistName="interpool" />
             </Row>
           </div>
         </Col>
@@ -40,7 +40,7 @@ const Main = () => {
           <div id="pop">
             <h2 style={{ color: 'grey' }} className='mb-3'>Pop Culture</h2>
             <Row >
-              <MusicSection artistName="katyperry" />
+              <MusicSection artistName="pink floyd" />
             </Row>
           </div>
         </Col>
@@ -50,7 +50,7 @@ const Main = () => {
           <div id="hiphop">
             <h2 style={{ color: 'grey' }} className='mb-3'>#HipHop</h2>
             <Row >
-              <MusicSection artistName="eminem" />
+              <MusicSection artistName="moderat" />
             </Row>
           </div>
         </Col>

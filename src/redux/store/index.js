@@ -6,6 +6,7 @@ import songReducer from '../reducers/song'
 const bigReducer = combineReducers({
   favourite : favouriteReducer,
   song: songReducer ,
+
 })
 const store = configureStore({
     reducer: bigReducer,
