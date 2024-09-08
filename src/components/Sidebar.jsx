@@ -1,12 +1,27 @@
-import { Navbar, Nav, Container, Button, FormControl } from "react-bootstrap";
+import { Navbar, Nav, Container, Button, FormControl, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import searchReducer from "../redux/reducers/search";
+import { useNavigate } from "react-router-dom";
+import { useState} from "react";
+import { getAlbumAction } from "../redux/actions/actions";
+import { useDispatch } from "react-redux";
 
 const Sidebar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+const dispatch= useDispatch()
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
 
-  const handleSearch = () => {
-    console.log("Searching for:", searchTerm);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    dispatch(getAlbumAction(query));
+    navigate(`/artist-tracks/${query}`);
+  };
+
+  const handleClick = () => {
+    navigate('/Search');
   };
 
   return (
@@ -39,15 +54,17 @@ const Sidebar = () => {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <FormControl
-                  type="text"
-                  placeholder="Search"
-                  aria-label="Search"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="bg-black text-secondary border-secondary"
-                  onSubmit={handleSearch}
-                />
+                <Form onSubmit={handleSubmit}>
+                  <FormControl
+                    type="text"
+                    placeholder="Search"
+                    aria-label="Search"
+                    value={query}
+                    onChange={handleChange}
+                    onClick={handleClick} // Aggiungi l'evento onClick
+                    className="bg-black text-secondary border-secondary"
+                  />
+                </Form>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link as={Link} to="/playlists" className="text-secondary">

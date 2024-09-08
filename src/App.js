@@ -6,6 +6,8 @@ import Sidebar from './components/Sidebar';
 import Playlist from './components/Playlist';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Search from './components/Search'; 
+import ArtistTracks from './components/ArtistTracks';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/playlists" element={<Playlist />} />
+            <Route path="/artist-tracks/:artistId" element={<ArtistTracks />} />
+            <Route path="/search" element={<Search />} /> 
           </Routes>
         </div>
       </div>
