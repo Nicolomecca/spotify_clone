@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <main className="col-12 col-md-9 offset-md-3 mainPage mainMargin">
       <Row className="justify-content-between mb-5">
-        <Col xs={12} md={6} lg={11} className="mainLinks d-none d-md-flex mb-3 mt-3">
+        <Col xs={12} md={6} lg={11} className="mainLinks d-none d-md-flex mb-3 mt-4">
           <Link to="/trending" className="text-black font-weight-bold  flex-fill  text-decoration-none text-white">
             TRENDING
           </Link>

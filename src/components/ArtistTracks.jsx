@@ -8,7 +8,7 @@ const ArtistTracks = () => {
   return (
 <Row className='sidebarMargins'>
   <Col xs={10}>  
-    <h2 className='text-white mb-3'>Tracce dell'Artista</h2>
+    <h2 className='text-white mb-4 mt-3'>Tracce dell'Artista</h2>
     <Row>
       {artistTracks && artistTracks.length > 0 ? (
         artistTracks.map((song, index) => (
