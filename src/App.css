@@ -165,3 +165,6 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,44,52,1) 15%, rgb(
 .sidebarMargin {
   margin-left: 230px;
 }
+.sidebarMargins {
+  margin-left: 25%;
+}

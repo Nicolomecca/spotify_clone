@@ -57,6 +57,6 @@ const Main = () => {
       </Row>
     </main>
   );
-};
+}; 
 
 export default Main;
